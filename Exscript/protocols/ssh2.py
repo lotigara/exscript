@@ -23,9 +23,7 @@
 """
 SSH version 2 support, based on paramiko.
 """
-from __future__ import absolute_import, unicode_literals
-from builtins import str
-import sys
+from __future__ import absolute_import
 import os
 import time
 import select
@@ -113,8 +111,8 @@ class SSH2(Protocol):
     def _save_host_keys(self):
         with open(self._host_keys_filename, 'w') as file:
             file.write('# SSH host keys collected by Exscript\n')
-            for hostname, keys in self._host_keys.items():
-                for keytype, key in keys.items():
+            for hostname, keys in self._host_keys.iteritems():
+                for keytype, key in keys.iteritems():
                     line = ' '.join((hostname, keytype, key.get_base64()))
                     file.write(line + '\n')
 
@@ -351,7 +349,7 @@ class SSH2(Protocol):
 
         if key_file is None:
             key_file = []
-        elif isinstance(key_file, (str, _str_types)):
+        elif isinstance(key_file, (str, unicode)):
             key_file = [key_file]
 
         # Try each key.

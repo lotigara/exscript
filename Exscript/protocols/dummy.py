@@ -23,10 +23,7 @@
 """
 A client that talks to a :class:`Exscript.emulators.VirtualDevice`.
 """
-from __future__ import absolute_import, unicode_literals
-from future import standard_library
-standard_library.install_aliases()
-from builtins import str
+from __future__ import absolute_import
 from ..emulators import VirtualDevice
 from .protocol import Protocol
 from .exception import TimeoutException, DriverReplacedException, \

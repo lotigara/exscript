@@ -23,7 +23,6 @@
 """
 Handling PID (process id) files.
 """
-from builtins import str
 import os
 import logging
 import fcntl

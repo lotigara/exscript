@@ -23,10 +23,7 @@
 """
 An abstract base class for all protocols.
 """
-from __future__ import absolute_import, unicode_literals
-from future import standard_library
-standard_library.install_aliases()
-from builtins import object
+from __future__ import absolute_import
 import re
 import sys
 import select
@@ -1127,7 +1124,7 @@ class Protocol(object):
 
     def _call_key_handlers(self, key_handlers, data):
         if key_handlers is not None:
-            for key, func in key_handlers.items():
+            for key, func in key_handlers.iteritems():
                 if data == key:
                     func(self)
                     return True

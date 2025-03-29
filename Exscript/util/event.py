@@ -24,7 +24,6 @@
 A simple signal/event mechanism.
 """
 from __future__ import print_function, absolute_import
-from builtins import object
 from threading import Lock
 from . import weakmethod
 

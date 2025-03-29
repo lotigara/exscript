@@ -1,4 +1,3 @@
-from builtins import range
 import sys
 import unittest
 import re
@@ -91,7 +90,7 @@ class AccountPoolTest(unittest.TestCase):
             self.assertEqual(account.get_name(), 'abc')
 
             # Release all accounts.
-            for account in acquired.values():
+            for account in acquired.itervalues():
                 account.release()
 
     def testReleaseAccounts(self):

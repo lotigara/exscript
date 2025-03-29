@@ -22,7 +22,6 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 from __future__ import print_function
 from __future__ import absolute_import
-from builtins import range
 import Exscript.interpreter.code
 from ..parselib import Token
 from .term import Term
@@ -133,7 +132,7 @@ class Loop(Token):
         if self.thefrom:
             start = self.thefrom.value(context)[0]
             stop = self.theto.value(context)[0]
-            lists = [list(range(start, stop))]
+            lists = [range(start, stop)]
         else:
             lists = [var.value(context) for var in self.list_variables]
         vars = self.iter_varnames
@@ -145,7 +144,7 @@ class Loop(Token):
                 self.lexer.runtime_error(msg, self)
 
         # Iterate.
-        for i in range(len(lists[0])):
+        for i in xrange(len(lists[0])):
             f = 0
             for thelist in lists:
                 self.block.define(**{vars[f]: [thelist[i]]})

@@ -77,7 +77,7 @@ def disable_driver(name):
     driver_classes.pop(driver.__class__)
 
 # Load built-in drivers.
-for name, obj in list(locals().items()):
+for name, obj in locals().items():
     if isdriver(obj):
         add_driver(obj)
 driver_map['unknown'] = driver_map['generic']

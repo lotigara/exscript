@@ -24,7 +24,6 @@
 A class for catching SIGINT, such that CTRL+c works.
 """
 from __future__ import print_function
-from builtins import object
 import os
 import sys
 import signal

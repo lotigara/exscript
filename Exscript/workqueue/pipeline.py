@@ -1,4 +1,3 @@
-from builtins import object
 #
 # Copyright (C) 2010-2017 Samuel Abels
 # The MIT License (MIT)
@@ -277,7 +276,7 @@ class Pipeline(object):
 
             return self._get_next(False)
 
-    def __next__(self):
+    def next(self):
         with self.condition:
             while self.running:
                 if self.paused:

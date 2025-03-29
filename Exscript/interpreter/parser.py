@@ -21,7 +21,6 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 from __future__ import absolute_import
-from builtins import object
 import copy
 from ..parselib import Lexer
 from .program import Program
@@ -37,7 +36,7 @@ class Parser(object):
         self.variables = {}
 
     def define(self, **kwargs):
-        for key, value in kwargs.items():
+        for key, value in kwargs.iteritems():
             if hasattr(value, '__iter__') or hasattr(value, '__call__'):
                 self.variables[key] = value
             else:

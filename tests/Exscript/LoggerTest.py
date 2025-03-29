@@ -1,5 +1,3 @@
-from builtins import next
-from builtins import str
 import sys
 import unittest
 import re

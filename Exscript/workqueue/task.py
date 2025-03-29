@@ -23,7 +23,6 @@
 """
 Represents a batch of enqueued actions.
 """
-from builtins import object
 from Exscript.util.event import Event
 
 
