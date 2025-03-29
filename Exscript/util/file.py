@@ -233,4 +233,4 @@ def load_lib(filename):
     else:
         module = importlib.machinery.SourceFileLoader(name, filename).load_module()
 
-    return dict((name + '.' + k, v) for (k, v) in list(module.__lib__.items()))
+    return dict((name + '.' + k, v) for (k, v) in module.__lib__.items())
